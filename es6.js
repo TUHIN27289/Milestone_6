@@ -66,3 +66,49 @@ aviFav[2]=999;
 console.log(aviFav)
 aviFav.push(9999);
 console.log(aviFav)
+
+
+// ~ ~ ~ 29-2 Function default parameter for not provided values (=) ~ ~ ~
+// FOR iNTEGER
+function addW(num1,num2){
+    const total=num1+num2;
+    return total;
+}
+console.log(addW(10));
+
+function add(num1=0,num2=0){
+    const total=num1+num2;
+    return total;
+}
+console.log(add(10));
+
+// FOR STRING
+function addName(first, last='avi'){
+    const fullName=first+' '+last;
+    return fullName;
+}
+console.log(addName('toukir'));
+
+// for array
+function addArray(array=[2,6,1229]){
+    return array;
+}
+console.log(addArray([1229,143,111,783,879,321]));
+console.log(addArray());
+
+// for object
+function addObj(obj={name:'toukir', age:22, gender:'male'}){
+    return obj;
+}
+console.log(addObj({name:'avi', age:24, gender:'female'}));
+console.log(addObj());
+
+// thumb rule of default value,may be useful
+// multiply-->1
+// subtract/addition-->0
+// string=''
+// array[]
+// object{}
+
+// ~ ~ ~ 29-3 Template string, multiple line string, dynamic string ~ ~ ~
+const firstName='toukir';
