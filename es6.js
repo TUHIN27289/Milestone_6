@@ -111,4 +111,23 @@ console.log(addObj());
 // object{}
 
 // ~ ~ ~ 29-3 Template string, multiple line string, dynamic string ~ ~ ~
-const firstName='toukir';
+function addition(num1=0,num2=0){
+    const total=num1+num2;
+    return `sum ${num1} of ${num2} is ${total}`;
+}
+console.log(addition(10, 20));
+const tex=` hi i am toukir ahmed.
+i am 22 years old.
+i am a student.
+avi is my best friend
+i love ... so much
+my fav num is : 1229
+`
+console.log(tex);
+
+const tex2=` hi i am toukir ahmed.
+i am 22 years old.
+i am a student.
+avi is my best friend`
+console.log(tex2);
+
