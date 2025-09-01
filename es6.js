@@ -207,3 +207,24 @@ console.log(ages5);
 const person={name:'toukir', age:22, job:'student'};
 const person2={favperson:'avi',...person,favNum:1229};
 console.log(person2);
+
+// 29-7 (advanced) Object and Array Destructuring
+// const student={name:'avi', age:24, job:'student', bfName:'toukir', address:'kolabagan', phone:1229, friends:['abul','babul','kabul','dabul']};
+const student={name1:'avi', age1:24, job1:'student', bfName:'toukir', address:'kolabagan', phone:1229, friends:['abul','babul','kabul','dabul']};
+
+const{name1, age1, job1, bfName, address, phone, friends}=student;
+console.log(name1, age1, job1, bfName, address, phone, friends);
+// using asles
+const{name1:n, age1:a, job1:j, bfName:b, address:c, phone:p, friends:f}=student;
+console.log(n, a, j, b, c, p, f);
+
+const {price}={price:1229, name:'avi', job:'student'};
+console.log(price);
+const{price1,nam}= {price1:1229, nam:'avi', job:'student'};
+console.log(nam)
+// destructuring array
+const numbers=[12,78,1229,7,9,56,90,32];
+const[phy,che,mat,bio,eng,ban]=numbers;
+console.log(phy,che,mat,bio,eng,ban);
+const[,,m,,,,s]=numbers;
+console.log(m,s);
