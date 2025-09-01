@@ -131,3 +131,42 @@ i am a student.
 avi is my best friend`
 console.log(tex2);
 
+// 29-4 Arrow function, multiple parameters, function body =>
+//  function declartion
+function addition_(num1=0,num2=0){
+    const total=num1+num2;
+    return total;
+}
+console.log(addition_(10, 20));
+// function expression
+// const addition2=function(num1=0, num2=0){
+//     const total=num1+num2;
+//     return total;
+// }
+
+const funExpress=function(num){
+    console.log('i am function expression');
+    return num*2;
+}
+console.log(funExpress(10));
+
+// arrow function
+const addition2=(num1=0,num2=0)=>{
+    const total=num1+num2;
+    return total;
+}
+console.log(addition2(10,20));
+
+const isEven=num=>num%2===0;
+console.log(isEven(1229));
+
+const doMath=(x,y)=>{
+    const sum=x+y;
+    const diff=x-y;
+    const result=sum*diff;
+    return result;
+}
+console.log(doMath(10,5));
+
+const isBig=(n1,n2)=>(n1>n2)?n1:n2;
+console.log(isBig(1229,143777));
