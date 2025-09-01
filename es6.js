@@ -271,3 +271,21 @@ console.log(stu);
 
 // delete stu.job; // i can't delete any property
 // console.log(stu);    
+
+
+
+
+//  ~ ~ ~ 29-9 Const object and array can be upgradeable ~ ~ ~
+
+//  ~ ~ ~ way 1
+const stu1={name:'avi', age:24, job:'student', bfName:'toukir', address:'kolabagan', phone:1229, friends:['abul','babul','kabul','dabul']};
+for(const prop in stu1){
+    console.log(prop);
+    console.log(stu1[prop]);
+}
+//  ~ ~ ~ way 2
+const key=Object.keys(stu1);
+for(const i of key){
+    console.log(i);
+    console.log(stu1[i]);
+}
