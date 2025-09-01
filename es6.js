@@ -170,3 +170,8 @@ console.log(doMath(10,5));
 
 const isBig=(n1,n2)=>(n1>n2)?n1:n2;
 console.log(isBig(1229,143777));
+
+const greet=()=> 'good morning toukir ahmed';
+console.log(greet());
+const getSquare=n=>n*n;
+console.log(getSquare(1229));
