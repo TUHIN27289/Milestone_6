@@ -289,3 +289,50 @@ for(const i of key){
     console.log(i);
     console.log(stu1[i]);
 }
+
+
+//  ~ ~ ~ problem ~ ~ ~
+// ❓ Problem:
+
+// You are given the following object:
+
+// const user = { name: "John", age: 30, city: "New York" };
+
+
+// Using object destructuring, extract the name and age properties into separate variables.
+
+const user = { name_: "John", age_: 30, city: "New York" };
+const{name_,age_}=user;
+console.log(name_,age_);
+
+
+// ❓ Problem:
+
+// You are given the following array:
+
+// const colors = ["red", "green", "blue"];
+
+
+// Using array destructuring, extract the first and third elements into variables named firstColor and thirdColor.
+const colors = ["red", "green", "blue"];
+const[fi,,t]=colors;
+console.log(fi , t);
+
+// sayhello function
+const sayhello=(st)=>{
+    console.log(`hello ${st}`);
+}
+sayhello('toukir ahmed');
+sayhello('avi');
+sayhello('world!');
+
+
+// 
+const sname='bangladesh';
+const sage=22;
+const sjob='student';
+const bio_=`${sname} is my fav country
+here live a boy, who fall in love with a girl whose age is ${sage}
+she is a ${sjob}
+`
+console.log(bio_)
