@@ -175,3 +175,35 @@ const greet=()=> 'good morning toukir ahmed';
 console.log(greet());
 const getSquare=n=>n*n;
 console.log(getSquare(1229));
+
+//  ~ ~ ~29-6 Spread operator, array max, copy arrays ~ ~ ~
+const ages=[12,14,16,18,20,22,24,26,28,30];
+console.log(ages);
+console.log(...ages);  // spread operator
+
+
+console.log(Math.max(ages));  // wrong way
+console.log(Math.max(...ages)); // correct way
+
+const ages2=ages;
+console.log(ages2);
+ages2.push(32);
+console.log(ages);
+console.log(ages2);
+
+// copy an array using spread operator
+const ages3=[...ages];
+console.log(ages3);
+ages3.push(34);
+console.log(ages);
+console.log(ages3);
+
+const ages4=[...ages, 36,38,40];
+console.log(ages4);
+
+const ages5=[-1,-2,-3,...ages,42,44,46];
+console.log(ages5);
+
+const person={name:'toukir', age:22, job:'student'};
+const person2={favperson:'avi',...person,favNum:1229};
+console.log(person2);
