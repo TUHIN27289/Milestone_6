@@ -228,3 +228,46 @@ const[phy,che,mat,bio,eng,ban]=numbers;
 console.log(phy,che,mat,bio,eng,ban);
 const[,,m,,,,s]=numbers;
 console.log(m,s);
+
+// 29-8 Keys, values, entries, delete, seal, freeze
+// keys
+const stu={name:'avi', age:24, job:'student', bfName:'toukir', address:'kolabagan', phone:1229, friends:['abul','babul','kabul','dabul']};
+const keys=Object.keys(stu);
+console.log(keys);
+
+const values=Object.values(stu);
+console.log(values);
+
+const entries=Object.entries(stu);
+console.log(entries);
+
+// delete
+delete stu.phone;
+console.log(stu);
+
+
+// seal
+// i can not add or delete any property
+// but i can update any property
+Object.seal(stu);
+stu.age=15;
+console.log(stu);
+
+// stu.phone=1229; // i can't add any property
+// console.log(stu);
+
+// delete stu.job; // i can't delete any property
+// console.log(stu);
+
+
+// freeze
+// i can't add, delete or update any property
+Object.freeze(stu);
+stu.age=25;
+console.log(stu);
+
+// stu.phone=1229; // i can't add any property
+// console.log(stu);
+
+// delete stu.job; // i can't delete any property
+// console.log(stu);    
