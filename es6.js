@@ -348,10 +348,20 @@ const toukir = {
     'address-home':{
         city:'birampur',
         country:'bangladesh'
-    }
+    },
+    hobbies:['cricket','football','reading'],
+    // favplace:'coxsbazar',
+    // mother:{
+    //     name:'amsa',
+    //     age:50,
+    //     job:'housewife'
+    // }
+
 };
 console.log(toukir.name);// by dot notation
 console.log(toukir['1']); // by bracket notation
 console.log(toukir['address-home']);
  console.log(toukir['address-home'].city);
 console.log(toukir['address-home'].country);
+// console.log(toukir.favplace) 
+console.log(toukir.mother?.name);// optional chaining

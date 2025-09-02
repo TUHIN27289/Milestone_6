@@ -1,2 +1,5 @@
-console.log(toukir.address['city']);
-// console.log(toukir.address.country);
+mother:{
+    //     name:'amsa',
+    //     age:50,
+    //     job:'housewife'
+    // }
