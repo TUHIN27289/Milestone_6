@@ -365,3 +365,18 @@ console.log(toukir['address-home']);
 console.log(toukir['address-home'].country);
 // console.log(toukir.favplace) 
 console.log(toukir.mother?.name);// optional chaining
+
+
+
+// ~ ~ ~ 30-3 Array map to do one-line loop magic
+  const n_=[2,8,4,34,23,54,1229];
+  const n_double=n_.map(n=>n*2);
+  console.log(n_.map(n=>n*2))// double
+  console.log(n_.map(n=>n*5))// fivetimes
+  console.log(n_.map(n=>n*n))// square
+
+  const fr=['aviiii','beautiful avi','toukir','1229','avitoukr','TA']
+console.log(fr.map(n=>n.length))
+console.log(fr.map(n=>n.toUpperCase()))
+console.log(fr.map(n=>n[0].toUpperCase()));
+console.log(n_.map((n,i)=>n*i))
