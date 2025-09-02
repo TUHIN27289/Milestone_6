@@ -336,3 +336,22 @@ here live a boy, who fall in love with a girl whose age is ${sage}
 she is a ${sjob}
 `
 console.log(bio_)
+
+
+// ~ ~ ~ module-30
+// 30-2 Access Value, nested object, Optional chaining, Dot notation vs bracket notation
+const toukir = {
+    name:"toukir ahmed",
+    age:26,
+    job:'cse-engineer',
+    1:1229,
+    'address-home':{
+        city:'birampur',
+        country:'bangladesh'
+    }
+};
+console.log(toukir.name);// by dot notation
+console.log(toukir['1']); // by bracket notation
+console.log(toukir['address-home']);
+ console.log(toukir['address-home'].city);
+console.log(toukir['address-home'].country);
