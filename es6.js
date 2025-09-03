@@ -386,3 +386,20 @@ console.log(n_.map((n,i)=>n*i))
 
 const n3=[2,8,4,34,23,54,1229];
 n3.forEach(e=>console.log(e));
+console.log(n3);
+n3.forEach(j=>{
+    const tentimes=j*10;
+    console.log(tentimes);
+})
+
+
+// filter
+const n4=[2,8,4,34,23,54,1229];
+const greaterThen20=n4.filter(N=>N>20);
+console.log(greaterThen20);
+
+console.log('even number',n4.filter(n=>n%2===0))// even number
+
+//  find find used to find the first element that matches a condition
+const firstGreaterThan20 = n4.find(n => n > 20);
+console.log('first number greater than 20:', firstGreaterThan20);   
