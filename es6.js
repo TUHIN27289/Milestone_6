@@ -380,3 +380,9 @@ console.log(fr.map(n=>n.length))
 console.log(fr.map(n=>n.toUpperCase()))
 console.log(fr.map(n=>n[0].toUpperCase()));
 console.log(n_.map((n,i)=>n*i))
+
+// ~ ~ ~
+//30-4 foreach, filter, find, and differences between them
+
+const n3=[2,8,4,34,23,54,1229];
+n3.forEach(e=>console.log(e));
