@@ -447,3 +447,6 @@ class player {
 //  o.playerDetails();
 const q = new player('John Doe', 30, 'Developer');
 const q1= new player();
+console.log(q instanceof player);
+
+
