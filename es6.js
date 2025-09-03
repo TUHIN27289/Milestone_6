@@ -413,3 +413,37 @@ const sts=[
 console.log(sts.map(s=>s.name))
 console.log(sts.filter(s=>s.mark>=85))
 console.log(sts.find(s=>s.mark>=80))
+
+
+// reduce
+const totalmarks=sts.reduce((sum,s)=>sum+s.mark,0)
+console.log('total marks:', totalmarks);
+
+
+// 30-6 (optional) Introduction to Class and objects
+class player {
+    constructor(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.location='bangladesh';
+        console.log('calling the contructor method')
+        
+            console.log('player details:', name, age, job, this.location);
+       
+    }   
+    goal(){
+        console.log('scored goal')
+    }
+    sum(n,n1,n3){
+        const total=n+n1+n3;
+        console.log('total:', total);
+    }
+}
+
+ const o = new player();
+ o.goal();
+ o.sum(10,20,30);
+//  o.playerDetails();
+const q = new player('John Doe', 30, 'Developer');
+const q1= new player();
