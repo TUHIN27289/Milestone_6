@@ -403,3 +403,13 @@ console.log('even number',n4.filter(n=>n%2===0))// even number
 //  find find used to find the first element that matches a condition
 const firstGreaterThan20 = n4.find(n => n > 20);
 console.log('first number greater than 20:', firstGreaterThan20);   
+
+//  example of map --filter -- find
+const sts=[
+    {name:'avi',age:24, job:'student', mark:80},
+    {name:'toukir',age:22, job:'developer', mark:90},
+    {name:'rahim',age:25, job:'designer', mark:85}
+]
+console.log(sts.map(s=>s.name))
+console.log(sts.filter(s=>s.mark>=85))
+console.log(sts.find(s=>s.mark>=80))
