@@ -17,45 +17,44 @@ console.log(f);
 //non-primitive
 let g = { name: "John", age: 30 };
 let h = [1, 2, 3];
-let i = function() { return "Hello"; };
+let i = function () {
+  return "Hello";
+};
 console.log(g);
 console.log(h);
 console.log(i());
 
-
-
 // 31-2 Null Vs Undefined, different ways you will get undefined
 function total(a, b) {
-    console.log(a, b);
-    // return a + b;
+  console.log(a, b);
+  // return a + b;
 }
 function total1(a, b) {
-    console.log(a, b);
-     return a + b;
+  console.log(a, b);
+  return a + b;
 }
-total(5, );
+total(5);
 total(5, undefined);
-total( 10);
-total(6,9)
-console.log('value of function call : ',total1(5, 10));
-console.log('value of function call : ',total(5, 10));
+total(10);
+total(6, 9);
+console.log("value of function call : ", total1(5, 10));
+console.log("value of function call : ", total(5, 10));
 
-const phone={
-    name:'phone',
-    brand:'Apple',
-    model:'iPhone 13',
-    year:2021
-}
-console.log(phone.color);//undefined
-const favNum=[2,8,9,45,3,2,45,12]
+const phone = {
+  name: "phone",
+  brand: "Apple",
+  model: "iPhone 13",
+  year: 2021,
+};
+console.log(phone.color); //undefined
+const favNum = [2, 8, 9, 45, 3, 2, 45, 12];
 delete favNum[1];
-console.log('after deleteing array index',favNum[1]);//undefined
-console.log(favNum[61]);//undefined
-console.log('type of undefined:', typeof undefined);
+console.log("after deleteing array index", favNum[1]); //undefined
+console.log(favNum[61]); //undefined
+console.log("type of undefined:", typeof undefined);
 
 // null is an object
-console.log('type of null :', typeof null);
-
+console.log("type of null :", typeof null);
 
 /*
 🔍 null vs undefined
@@ -71,42 +70,41 @@ console.log('type of null :', typeof null);
 */
 
 let data;
-data=0;
-data='' //empty string is false
-data=' '// has an white space 
-data='0'
-data=false
-data=true
-data=null
-data={}
-data=[]
-data=[7]
-data=true
-data=-0
-data=undefined
-data=NaN
-data=9
-data=-9
-data=function missAVI(){}
-console.log('type of data:', typeof data);
-console.log('value of data:', data);
-if(data){
-    console.log(data,'data is truthy');
-}
-else{
-    console.log(data, 'data is falsy');
+data = 0;
+data = ""; //empty string is false
+data = " "; // has an white space
+data = "0";
+data = false;
+data = true;
+data = null;
+data = {};
+data = [];
+data = [7];
+data = true;
+data = -0;
+data = undefined;
+data = NaN;
+data = 9;
+data = -9;
+data = function missAVI() {};
+console.log("type of data:", typeof data);
+console.log("value of data:", data);
+if (data) {
+  console.log(data, "data is truthy");
+} else {
+  console.log(data, "data is falsy");
 }
 
 // if i need to capture the falsy values to go inside if block
 // use logical not
-if(!data){
-    console.log(data,'Inside if with falsy value');
+if (!data) {
+  console.log(data, "Inside if with falsy value");
 }
 
 //capture all positive value
 // use double not !!
-if(data===true){
-    console.log('only true inside the double not')
+if (data === true) {
+  console.log("only true inside the double not");
 }
 
 /*
@@ -146,8 +144,6 @@ Example:
   }
 */
 
-
-
 /*
 🔍 Difference Between NOT (!) and Double NOT (!!) in JavaScript
 
@@ -177,3 +173,53 @@ Examples:
 
 ✅ Use `!!value` when you want to **force a value into boolean form**.
 */
+
+// ~ ~ ~  31-4 double equal (==) vs triple equal (===), implicit conversion
+// double equal (==) vs triple equal (===), implicit conversion
+const aa = 5;
+const bb = "5";
+
+console.log(a == b); // true (value is equal, type is ignored)
+console.log(a === b); // false (value and type are both considered)
+
+// triple
+console.log(2 === 2); // true
+console.log(2 === "2"); // false
+console.log(2 === 2n); // false
+console.log(2n === 2); // false
+console.log(2n === 2n); // true
+console.log(2n === "2"); // false
+console.log(1 === 2); // false
+console.log(true === 1); //false
+console.log(false === 0); // false
+console.log(false === 0n); // false
+console.log(false === "0"); // false
+console.log(false === NaN); // false
+console.log(false === null); // false
+console.log(false === undefined); // false
+console.log(false === function(){}); // false
+console.log(false === Symbol()); // false
+console.log(false === BigInt(0)); // false
+console.log(false === -0); // false
+console.log(false === ''); // false
+console.log([]==='')
+
+// double ==
+console.log('~ ~ ~     ==  ~ ~ ~')
+console.log(2 == "2"); // true
+console.log(2 == 2n); // true
+console.log(2n == 2); // true
+console.log(2n == "2"); // true
+console.log(1 == 2); // false
+console.log(true == 1); // true
+console.log(false == 0); // true
+console.log(false == 0n); // true
+console.log(false == "0"); // true
+console.log(false == NaN); // false
+console.log(false == null); // false
+console.log(false == undefined); // false
+console.log(false == function(){}); // false
+console.log(false == Symbol()); // false
+console.log(false == BigInt(0)); // true
+console.log(false == -0); // true
+console.log('~ ~ ~',false == ''); // true
