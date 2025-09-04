@@ -3,6 +3,7 @@
 // Primitive data types: Number, String, Boolean, Null, Undefined, Symbol
 // Non-primitive data types: Object, Array, Function
 // primitive
+// import * as x from 'casper'
 let a = 10;
 let b = "Hello";
 let c = true;
@@ -204,6 +205,25 @@ console.log(false === -0); // false
 console.log(false === ''); // false
 console.log([]==='')
 
+/*
+🔍 Difference Between == and === in JavaScript
+
+📌 == (Loose Equality)
+- Compares **values** after **type coercion**.
+- If the types are different, JavaScript tries to convert them to the same type before comparing.
+
+
+
+📌 === (Strict Equality)
+- Compares **both value and type** without coercion.
+- No type conversion is done — if types differ, result is false.
+
+✅ Best Practice:
+Always use `===` to avoid unexpected behavior from type coercion.
+Use `==` only when you're **intentionally** relying on type conversion.
+*/
+
+
 // double ==
 console.log('~ ~ ~     ==  ~ ~ ~')
 console.log(2 == "2"); // true
@@ -223,3 +243,28 @@ console.log(false == Symbol()); // false
 console.log(false == BigInt(0)); // true
 console.log(false == -0); // true
 console.log('~ ~ ~',false == ''); // true
+
+
+// ~ ~ ~  31-5 Block scope global scope, simple understanding of Hoisting
+
+function hoistingExample() {
+  console.log(x); // undefined
+  var x = 5;
+  console.log(x); // 5
+  console.log(doMath(8,9))
+
+function  dosub(a,b){
+    return a - b;
+  }
+
+}
+
+hoistingExample();
+// console.log(x);  // i don't have the access of x outside block or that function
+
+
+function doMath(a,b){
+    return a + b;
+}
+
+// dosub(8,5); //i have no access to function dosub cause it's defined inside another function,and i  am accessing outside block

@@ -1,5 +1,3 @@
-mother:{
-    //     name:'amsa',
-    //     age:50,
-    //     job:'housewife'
-    // }
+function doMath(a,b){
+    return a + b;
+}
