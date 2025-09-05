@@ -198,12 +198,12 @@ console.log(false === "0"); // false
 console.log(false === NaN); // false
 console.log(false === null); // false
 console.log(false === undefined); // false
-console.log(false === function(){}); // false
+console.log(false === function () {}); // false
 console.log(false === Symbol()); // false
 console.log(false === BigInt(0)); // false
 console.log(false === -0); // false
-console.log(false === ''); // false
-console.log([]==='')
+console.log(false === ""); // false
+console.log([] === "");
 
 /*
 🔍 Difference Between == and === in JavaScript
@@ -223,9 +223,8 @@ Always use `===` to avoid unexpected behavior from type coercion.
 Use `==` only when you're **intentionally** relying on type conversion.
 */
 
-
 // double ==
-console.log('~ ~ ~     ==  ~ ~ ~')
+console.log("~ ~ ~     ==  ~ ~ ~");
 console.log(2 == "2"); // true
 console.log(2 == 2n); // true
 console.log(2n == 2); // true
@@ -238,12 +237,11 @@ console.log(false == "0"); // true
 console.log(false == NaN); // false
 console.log(false == null); // false
 console.log(false == undefined); // false
-console.log(false == function(){}); // false
+console.log(false == function () {}); // false
 console.log(false == Symbol()); // false
 console.log(false == BigInt(0)); // true
 console.log(false == -0); // true
-console.log('~ ~ ~',false == ''); // true
-
+console.log("~ ~ ~", false == ""); // true
 
 // ~ ~ ~  31-5 Block scope global scope, simple understanding of Hoisting
 
@@ -251,20 +249,35 @@ function hoistingExample() {
   console.log(x); // undefined
   var x = 5;
   console.log(x); // 5
-  console.log(doMath(8,9))
+  console.log(doMath(8, 9));
 
-function  dosub(a,b){
+  function dosub(a, b) {
     return a - b;
   }
-
 }
 
 hoistingExample();
 // console.log(x);  // i don't have the access of x outside block or that function
 
-
-function doMath(a,b){
-    return a + b;
+function doMath(a, b) {
+  return a + b;
 }
 
 // dosub(8,5); //i have no access to function dosub cause it's defined inside another function,and i  am accessing outside block
+
+//~ ~ ~ 31-6 (optional) Callback function and pass different functions
+function greet(callback, age, name) {
+  console.log("Age is:", age);
+  if (age > 18) {
+    callback(name.toUpperCase());
+  } else {
+    callback(name);
+  }
+}
+
+function callback(name) {
+  console.log("Hello, " + name + "!");
+}
+//  callback('AVI')
+
+greet(callback, 100,'toukirr'); // Output: Hello, Alice!
