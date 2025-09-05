@@ -1,59 +1,59 @@
 //32-2 Recap API Concept , Intro to JSON
-const person={
-    name:'toukir',
-    age:22,
-    address:'Dhaka',
-    profession:'student',
-    country:'Bangladesh',
-    favSubject:['Math','English','Bangla','ICT'],
-    isMarried:false,
-    friends:[
-        {name:'Avi',age:23},
-        {name:'1229',age:24},
-        {name:'Salma',age:25},
-        {name:'toukir',age:26},
-    ],
-    hasGF:false,
-    gfName:'',
-    siblings:['sister','brother'],
-    isSingle:true,
-    isRich:false,
-    isHappy:true,
-    isHealthy:true,
-    isActive:true,
-    isStudent:true,
-    isEmployed:false,
-    isEntrepreneur:false,
-    isTraveler:true,
-    isFoodie:true,
-    isGamer:false,
-    isReader:true,
-    isWriter:false,
-    isArtist:false,
-    isMusician:false,
-    isDancer:false,
-    isSinger:false,
-    isActor:false,
-    isDirector:false,
-    isProducer:false,
-    isPhotographer:false,
-    isBlogger:true,
-    isVlogger:false,
-    isYoutuber:false,
-    isTiktoker:false,
-    isInstagrammer:true,
-    isFacebooker:true,
-    isTwitterer:false,
-    isLinkedIn:false,
-    isSnapchatter:false,
-    isRedditor:false,
-    isQuoran:false,
-    isPinterestUser:false,
-    isTumblrUser:false,
-    isMediumUser:false    ,
-    isSubstackUser:false,
-    isPatreonUser:false,
-}
+const person = {
+  name: "toukir",
+  age: 22,
+  address: "Dhaka",
+  profession: "student",
+  country: "Bangladesh",
+  favSubject: ["Math", "English", "Bangla", "ICT"],
+  isMarried: false,
+  friends: [
+    { name: "Avi", age: 23 },
+    { name: "1229", age: 24 },
+    { name: "Salma", age: 25 },
+    { name: "toukir", age: 26 },
+  ],
+  hasGF: false,
+  gfName: "",
+  siblings: ["sister", "brother"],
+  isSingle: true,
+  isRich: false,
+  isHappy: true,
+  isHealthy: true,
+  isActive: true,
+  isStudent: true,
+  isEmployed: false,
+  isEntrepreneur: false,
+  isTraveler: true,
+  isFoodie: true,
+  isGamer: false,
+  isReader: true,
+  isWriter: false,
+  isArtist: false,
+  isMusician: false,
+  isDancer: false,
+  isSinger: false,
+  isActor: false,
+  isDirector: false,
+  isProducer: false,
+  isPhotographer: false,
+  isBlogger: true,
+  isVlogger: false,
+  isYoutuber: false,
+  isTiktoker: false,
+  isInstagrammer: true,
+  isFacebooker: true,
+  isTwitterer: false,
+  isLinkedIn: false,
+  isSnapchatter: false,
+  isRedditor: false,
+  isQuoran: false,
+  isPinterestUser: false,
+  isTumblrUser: false,
+  isMediumUser: false,
+  isSubstackUser: false,
+  isPatreonUser: false,
+};
 // json=javascript object notation
 // 1. JSON is a data format that is used to store and exchange data.
 // 2. JSON is a lightweight data format.
@@ -73,24 +73,53 @@ const person={
 // 1. JSON.stringify() - Converts Object to JSON
 // 2. JSON.parse() - Converts JSON to Object
 
-// Example: 
+// Example:
 
-
-
-console.log(person,'\n\ntyepeof person:',typeof person);
-const personJSON=JSON.stringify(person);//Object converted in to String
-console.log(personJSON,'\n\ntypeof personJSON:',typeof personJSON);// string
-const personParsed=JSON.parse(personJSON);//String converted in to Object
-console.log(personParsed,'\n\ntypeof personParsed:',typeof personParsed); // object
-
+console.log(person, "\n\ntyepeof person:", typeof person);
+const personJSON = JSON.stringify(person); //Object converted in to String
+console.log(personJSON, "\n\ntypeof personJSON:", typeof personJSON); // string
+const personParsed = JSON.parse(personJSON); //String converted in to Object
+console.log(personParsed, "\n\ntypeof personParsed:", typeof personParsed); // object
 
 //32-3 Load Json Data using Fetch Function
 
+const loadData = () => {
+  const res = fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((response) => response.json()) //converting fetched data to json string
+    .then((json) => console.log(json)); //printing json string data
+};
 
+//32-4 Recap Fetch() & Send and Console Each Data
 
+const postData = () => {
+  const url = "https://jsonplaceholder.typicode.com/posts";
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      displayPost(data);
+    });
+};
+const displayPost = (post) => {
+  // console.log(post);
+  post.forEach((p) => {
+    console.log(p);
+  });
+};
 
-const loadData=()=>{
-     const res=fetch('https://jsonplaceholder.typicode.com/todos/1')
-.then(response=>response.json())//converting fetched data to json string
-.then(json=>console.log(json));    //printing json string data
-}
+//another example of fetch & display data
+const readComment = () => {
+  const url_ = "https://jsonplaceholder.typicode.com/comments";
+  fetch(url_)
+    .then((res) => res.json())
+    .then((dat) => {
+      console.log(dat);
+      showComment(dat);
+    });
+};
+const showComment = (comment) => {
+  // console.log(comment);
+  comment.forEach((c) => {
+    console.log(c);
+  });
+};
