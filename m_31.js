@@ -281,3 +281,57 @@ function callback(name) {
 //  callback('AVI')
 
 greet(callback, 100,'toukirr'); // Output: Hello, Alice!
+
+
+// callback example
+function pakhibhai(callback_1,patro, patri){
+  if(patro){
+    console.log('patro ase', patro);
+    callback_1(`${patri} is calling you`);
+
+  }
+  else{
+    console.log('patro nai');
+  }
+}
+function calling1229(name){
+  console.log("Hello, " + name + "!");
+}
+calling1229('toukir');
+
+pakhibhai(calling1229,'toukir','avi');
+
+//31-7 (advanced) function arguments pass by reference pass by value
+//all primitive data type are passed by value-->number,string,boolean,null,undefined,symbol
+
+//pass by value
+ function passByValue(a, b) {
+  a = 10;
+  b = 20;
+  const sum = a + b;
+  return sum;
+}
+const num1 = 5;
+const num2 = 15;
+const result = passByValue(num1, num2);
+console.log("Result of passByValue:", result);
+//all non-primitive data type are passed by reference-->object,array,function
+//pass by reference
+function balancecalculator(p1, p2) {
+  p1.balance += 500; // Add 500 to player1's balance
+  p2.balance += 300; // Add 300 to player2's balance
+  return p1.balance + p2.balance;
+
+}
+
+
+const player1 = { name: "Toukir", balance: 100 };
+const player2 = { name: "Avi", balance: 150 };
+console.log("Before balancecalculator:");
+console.log(player1.balance); // { name: "Toukir", balance: 100 }
+console.log(player2.balance); // { name: "Avi", balance: 150 }
+const totalBalance = balancecalculator(player1, player2);
+console.log("After balancecalculator:");
+console.log(player1.balance); // { name: "Toukir", balance: 600 }
+console.log(player2.balance); // { name: "Avi", balance: 450 }
+console.log("Total Balance:", totalBalance); // Total Balance: 1050
