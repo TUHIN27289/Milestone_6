@@ -1,3 +1,5 @@
+// const { createElement } = require("react");
+
 //32-2 Recap API Concept , Intro to JSON
 const person = {
   name: "toukir",
@@ -96,14 +98,21 @@ const postData = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      //   console.log(data);
       displayPost(data);
     });
 };
 const displayPost = (post) => {
+  // 1. get the container
+  const postContainer = document.getElementById("post-container");
   // console.log(post);
   post.forEach((p) => {
-    console.log(p);
+    //create new element
+    const li = document.createElement("li");
+    li.innerHTML = `user-id ${p.userId} \n id- ${p.id} \n title- ${p.title} body- ${p.body} `;
+    //add li to container
+    postContainer.append(li);
+    // console.log(p);
   });
 };
 
@@ -113,13 +122,48 @@ const readComment = () => {
   fetch(url_)
     .then((res) => res.json())
     .then((dat) => {
-      console.log(dat);
+      //   console.log(dat);
       showComment(dat);
     });
 };
 const showComment = (comment) => {
+  //  get the container
+  const commentContainer = document.getElementById("comment-container");
   // console.log(comment);
   comment.forEach((c) => {
-    console.log(c);
+    //   create li
+    const li=document.createElement('li');
+    // edit the inner html
+    li.innerHTML=`postId ${c.postId} id: ${c.id} name: ${c.name} body: ${c.body} email: ${c.email}`
+
+    // add li to container
+    commentContainer.appendChild(li)
+    // console.log(c);
+  });
+};
+
+// 32-5 Load and Display Post title List in the UI
+// for album
+const readAlbums = () => {
+  const url_al = "https://jsonplaceholder.typicode.com/albums";
+  fetch(url_al)
+    .then((res) => res.json())
+    .then((dat) => {
+      // console.log(dat);
+      showAlbum(dat);
+    });
+};
+
+const showAlbum = (album) => {
+  // 1 get the container
+  const albumContainer = document.getElementById("album-container");
+  album.forEach((p) => {
+    // console.log(p.id,p.title,p.userId);
+    //2 create new element
+    const li = document.createElement("li");
+    // li.innerText=p.title,p.id;
+    li.innerHTML = `user id ${p.userId} and title ${p.title} and uid-${p.id}`;
+    // add li to container
+    albumContainer.appendChild(li);
   });
 };
