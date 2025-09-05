@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <!-- Tailwind cdn -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      -->
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body>
     <h1>Milestone-6</h1>
-    <br>
-    <button onclick="loadData()">Load Data</button>
-    <button onclick="postData()">Post Data</button>
-    <button onclick="readComment()">read comment</button>
-    <button onclick="readAlbums()"> read album</button>
-    <ul id="post-container"></ul>
+    <br />
+    <button class="bg-blue-500 "  onclick="loadData()">Load Data</button>
+    <button class="bg-blue-500 " onclick="postData()">Post Data</button>
+    <button class="bg-blue-500 " onclick="readComment()">read comment</button>
+    <button class="bg-blue-500 " onclick="readAlbums()">read album</button>
+    <button class="bg-blue-500" onclick="readTodo()">todo</button>
+
+    <ul id="post-container" class="w-[1400px]  mx-auto grid grid-cols-3 placeholder: gap-4 bg-slate-100"></ul>
     <ul id="album-container"></ul>
-    <ul id="comment-container">  </ul>
+    <ul id="comment-container"></ul>
+    <ul id="todo-container"></ul>
 
     
 
     
+    
+
     <script src="./m_32_API_JSON_Data_load_Dynamic_website.js"></script>
-</body>
+  </body>
 </html>

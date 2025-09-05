@@ -105,13 +105,21 @@ const postData = () => {
 const displayPost = (post) => {
   // 1. get the container
   const postContainer = document.getElementById("post-container");
+  postContainer.innerHTML=""
   // console.log(post);
   post.forEach((p) => {
     //create new element
-    const li = document.createElement("li");
-    li.innerHTML = `user-id ${p.userId} \n id- ${p.id} \n title- ${p.title} body- ${p.body} `;
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <div class="w-96 h-96 border-1  rounded-lg bg-white shadow-lg">
+        <h1 class="text-center text-red-500 font-bold">${p.userId}</h1>
+        <h1 class="text-center text-blue-700 font-semibold">${p.id}</h1>
+        <h1 class="text-center font-bold text-2xl text-green-800">${p.title}</h1>
+        <p class="text-center font-medium text-xl">${p.body}</p>
+      </div>
+    `;
     //add li to container
-    postContainer.append(li);
+    postContainer.append(div);
     // console.log(p);
   });
 };
@@ -129,6 +137,7 @@ const readComment = () => {
 const showComment = (comment) => {
   //  get the container
   const commentContainer = document.getElementById("comment-container");
+  commentContainer.innerHTML=""
   // console.log(comment);
   comment.forEach((c) => {
     //   create li
@@ -157,6 +166,7 @@ const readAlbums = () => {
 const showAlbum = (album) => {
   // 1 get the container
   const albumContainer = document.getElementById("album-container");
+  albumContainer.innerHTML=""
   album.forEach((p) => {
     // console.log(p.id,p.title,p.userId);
     //2 create new element
@@ -167,3 +177,39 @@ const showAlbum = (album) => {
     albumContainer.appendChild(li);
   });
 };
+
+
+
+// todo
+const readTodo=(todo)=>{
+const url_todo='https://jsonplaceholder.typicode.com/todos'
+fetch(url_todo)
+.then(res=>res.json())
+.then(dat=>{
+    console.log(dat)
+    displayTodo(dat);
+})
+}
+
+const displayTodo=(todo)=>{
+    // get the container
+    const todoContainer=document.getElementById('todo-container');
+    todoContainer.innerHTML=''
+    todo.forEach((p)=>{
+        // console.log(p);
+        // crete element
+
+    const div=document.createElement("div");
+    div.innerHTML=`<div>
+    <p>${p.completed===true?`<i class="fa-solid fa-square-check"></i>`:`<i class="fa-regular fa-square-check"></i>`}</p>
+    <p>${p.id}</p>
+    <p>${p.title}</p>
+    <p>${p.userId}</p>
+    
+    </div>
+    `
+    todoContainer.appendChild(div);
+    });
+    
+
+}
