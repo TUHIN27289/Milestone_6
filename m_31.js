@@ -335,3 +335,51 @@ console.log("After balancecalculator:");
 console.log(player1.balance); // { name: "Toukir", balance: 600 }
 console.log(player2.balance); // { name: "Avi", balance: 450 }
 console.log("Total Balance:", totalBalance); // Total Balance: 1050
+
+
+// 31-8 (advanced) Explore about Closure
+function  innerCounter(name) {
+  let count = 0; // private variable
+  function increment() {
+    count++;
+    // console.log("count is:", count);
+    console.log(`${name} count is: ${count}`);
+  }
+  return increment;
+}
+const avi = innerCounter("Avi");
+avi();
+avi();
+avi();
+avi();
+avi();
+avi();
+
+const toukir = innerCounter("Toukir");
+toukir();
+toukir();
+toukir();
+toukir();
+toukir();
+toukir();
+
+//simplified closure example
+
+function counter(name) {
+  let count = 0; // private variable
+  return function () {
+    count++;
+    console.log(`${name} count is:`, count);
+  };
+  
+}
+const toukirCounter = counter("Toukir");
+toukirCounter(); // Toukir count is: 1
+toukirCounter(); // Toukir count is: 2
+toukirCounter(); // Toukir count is: 3
+
+const aviCounter = counter("Avi");
+aviCounter(); // Avi count is: 1
+aviCounter(); // Avi count is: 2
+aviCounter(); // Avi count is: 3
+
