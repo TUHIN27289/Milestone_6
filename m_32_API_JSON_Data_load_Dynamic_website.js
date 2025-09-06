@@ -105,7 +105,7 @@ const postData = () => {
 const displayPost = (post) => {
   // 1. get the container
   const postContainer = document.getElementById("post-container");
-  postContainer.innerHTML=""
+  postContainer.innerHTML = "";
   // console.log(post);
   post.forEach((p) => {
     //create new element
@@ -137,16 +137,16 @@ const readComment = () => {
 const showComment = (comment) => {
   //  get the container
   const commentContainer = document.getElementById("comment-container");
-  commentContainer.innerHTML=""
+  commentContainer.innerHTML = "";
   // console.log(comment);
   comment.forEach((c) => {
     //   create li
-    const li=document.createElement('li');
+    const li = document.createElement("li");
     // edit the inner html
-    li.innerHTML=`postId ${c.postId} id: ${c.id} name: ${c.name} body: ${c.body} email: ${c.email}`
+    li.innerHTML = `postId ${c.postId} id: ${c.id} name: ${c.name} body: ${c.body} email: ${c.email}`;
 
     // add li to container
-    commentContainer.appendChild(li)
+    commentContainer.appendChild(li);
     // console.log(c);
   });
 };
@@ -166,7 +166,7 @@ const readAlbums = () => {
 const showAlbum = (album) => {
   // 1 get the container
   const albumContainer = document.getElementById("album-container");
-  albumContainer.innerHTML=""
+  albumContainer.innerHTML = "";
   album.forEach((p) => {
     // console.log(p.id,p.title,p.userId);
     //2 create new element
@@ -178,38 +178,63 @@ const showAlbum = (album) => {
   });
 };
 
-
-
 // todo
-const readTodo=(todo)=>{
-const url_todo='https://jsonplaceholder.typicode.com/todos'
-fetch(url_todo)
-.then(res=>res.json())
-.then(dat=>{
-    console.log(dat)
-    displayTodo(dat);
-})
-}
+const readTodo = (todo) => {
+  const url_todo = "https://jsonplaceholder.typicode.com/todos";
+  fetch(url_todo)
+    .then((res) => res.json())
+    .then((dat) => {
+      console.log(dat);
+      displayTodo(dat);
+    });
+};
 
-const displayTodo=(todo)=>{
-    // get the container
-    const todoContainer=document.getElementById('todo-container');
-    todoContainer.innerHTML=''
-    todo.forEach((p)=>{
-        // console.log(p);
-        // crete element
+const displayTodo = (todo) => {
+  // get the container
+  const todoContainer = document.getElementById("todo-container");
+  todoContainer.innerHTML = "";
+  todo.forEach((p) => {
+    // console.log(p);
+    // crete element
 
-    const div=document.createElement("div");
-    div.innerHTML=`<div>
-    <p>${p.completed===true?`<i class="fa-solid fa-square-check"></i>`:`<i class="fa-regular fa-square-check"></i>`}</p>
+    const div = document.createElement("div");
+    div.innerHTML = `<div class=" border border-red-600 p-4 w-96 gap-4 mx-auto">
+    <p>${
+      p.completed === true
+        ? `<i class="fa-solid fa-square-check"></i>`
+        : `<i class="fa-regular fa-square-check"></i>`
+    }</p>
     <p>${p.id}</p>
     <p>${p.title}</p>
     <p>${p.userId}</p>
     
     </div>
-    `
+    `;
     todoContainer.appendChild(div);
-    });
-    
+  });
+};
 
-}
+//32-9 Summary , Debugger & Async Await
+
+console.log("\n\n~ ~ ~   avi    ~ ~ ~\n\n");
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+console.log("avi");
+console.log("hello");
+console.log(true);
+
+// here before fetching the data , the editor exeucite the console line.
+// to overcome this problem we can use async and await
+const data__ = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  console.log("before avi");
+  console.log("before hello");
+  const json = await res.json();
+  console.log(json)
+  console.log('after avi')
+console.log('after hello')
+};
+data__();
